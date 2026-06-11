@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Soujanya Sakinal - PM & BA Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#F7F9FC; --ink:#0F1B2D; --accent:#2563EB;
+  --accent-light:#E8F0FE; --muted:#64748B; --border:#D1DCF0;
+  --white:#fff; --ff-d:'Plus Jakarta Sans',sans-serif; --ff-b:'Inter',sans-serif;
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--ff-b);font-size:16px;line-height:1.6}
+
+/* === NAV === */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(247,249,252,0.93);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 2.5rem;height:60px}
+.nav-brand{font-family:var(--ff-d);font-weight:800;font-size:1.05rem;color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:.875rem;
+  font-weight:500;transition:color .2s}
+.nav-links a:hover{color:var(--accent)}
+
+/* === HERO === */
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;
+  padding:80px 2rem 4rem;text-align:center;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 80% 60% at 50% 15%,
+  rgba(37,99,235,.07) 0%,transparent 70%);pointer-events:none}
+.hero-inner{max-width:780px;position:relative}
+.eyebrow{display:inline-block;background:var(--accent-light);
+  color:var(--accent);font-size:.78rem;font-weight:700;
+  letter-spacing:.09em;text-transform:uppercase;
+  padding:.35rem 1rem;border-radius:100px;margin-bottom:1.5rem;
+  border:1px solid rgba(37,99,235,.2)}
+.hero h1{font-family:var(--ff-d);font-weight:800;
+  font-size:clamp(2.4rem,6vw,4rem);line-height:1.1;
+  letter-spacing:-.03em;margin-bottom:.8rem}
+.hero h1 .accent{color:var(--accent)}
+.role-line{font-family:var(--ff-d);font-size:clamp(1.1rem,2.5vw,1.35rem);
+  color:var(--muted);font-weight:500;margin-bottom:1.8rem;min-height:2.2em}
+.typed{color:var(--accent);font-weight:700;
+  border-right:2.5px solid var(--accent);padding-right:3px;
+  animation:blink .75s step-end infinite}
+@keyframes blink{0%,100%{border-color:var(--accent)}50%{border-color:transparent}}
+.hero-desc{font-size:1.05rem;color:var(--muted);
+  max-width:600px;margin:0 auto 2.4rem;line-height:1.8}
+.hero-ctas{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+.btn-p{background:var(--accent);color:#fff;padding:.75rem 1.8rem;
+  border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;
+  transition:transform .15s,box-shadow .15s;
+  box-shadow:0 4px 14px rgba(37,99,235,.3)}
+.btn-p:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(37,99,235,.4)}
+.btn-g{border:1.5px solid var(--border);color:var(--ink);padding:.75rem 1.8rem;
+  border-radius:8px;font-weight:600;font-size:.95rem;text-decoration:none;
+  transition:border-color .2s,color .2s}
+.btn-g:hover{border-color:var(--accent);color:var(--accent)}
+
+/* === SECTIONS === */
+section{padding:5rem 2rem}
+.si{max-width:900px;margin:0 auto}
+.s-label{font-size:.72rem;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:.4rem}
+.s-title{font-family:var(--ff-d);font-weight:800;
+  font-size:clamp(1.6rem,3.5vw,2.1rem);letter-spacing:-.02em;margin-bottom:.8rem}
+.s-sub{color:var(--muted);font-size:.98rem;max-width:580px;
+  line-height:1.75;margin-bottom:2.8rem}
+
+/* === ROLES STRIP === */
+.roles-strip{background:#EEF3FB;border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);padding:2.5rem 2rem}
+.roles-inner{max-width:900px;margin:0 auto;
+  display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.role-chip{background:var(--white);border:1.5px solid var(--border);
+  border-radius:10px;padding:.75rem 1.4rem;
+  font-family:var(--ff-d);font-weight:700;font-size:.95rem;
+  color:var(--ink);display:flex;align-items:center;gap:.6rem;
+  transition:border-color .2s,transform .15s}
+.role-chip:hover{border-color:var(--accent);transform:translateY(-2px)}
+.role-chip .icon{font-size:1.2rem}
+.role-chip .sub{font-size:.75rem;color:var(--muted);font-weight:500;display:block}
+
+/* === ABOUT GRID === */
+.about-bg{background:var(--white)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.5rem}
+.acard{background:var(--bg);border:1px solid var(--border);
+  border-radius:14px;padding:1.6rem}
+.acard h3{font-family:var(--ff-d);font-weight:700;
+  font-size:1rem;margin-bottom:.6rem}
+.acard p,.acard li{font-size:.92rem;color:var(--muted);line-height:1.7}
+.acard ul{padding-left:1.2rem}
+.acard li{margin-bottom:.3rem}
+
+/* === CASE STUDY CARDS === */
+.case-study{background:var(--white);border:1px solid var(--border);
+  border-radius:16px;padding:2rem;margin-bottom:1.5rem;
+  box-shadow:0 2px 18px rgba(37,99,235,.08);transition:transform .2s}
+.case-study:hover{transform:translateY(-3px)}
+.cs-header{display:flex;align-items:flex-start;
+  justify-content:space-between;gap:1rem;margin-bottom:1.2rem;flex-wrap:wrap}
+.cs-title-group h3{font-family:var(--ff-d);font-weight:800;
+  font-size:1.2rem;margin-bottom:.3rem}
+.cs-meta{font-size:.8rem;color:var(--muted)}
+.cs-tag{display:inline-block;background:var(--accent-light);
+  color:var(--accent);font-size:.72rem;font-weight:700;
+  padding:.2rem .65rem;border-radius:100px;margin-right:.4rem;margin-bottom:.3rem}
+.cs-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:1rem;margin-top:1.2rem}
+.cs-col{background:var(--bg);border-radius:10px;padding:1rem}
+.cs-col-label{font-size:.7rem;font-weight:700;letter-spacing:.08em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:.5rem}
+.cs-col ul{padding-left:1.1rem}
+.cs-col li{font-size:.85rem;color:var(--ink);line-height:1.6;margin-bottom:.3rem}
+.cs-col p{font-size:.85rem;color:var(--ink);line-height:1.6}
+.cs-stack{display:flex;flex-wrap:wrap;gap:.4rem;margin-top:1rem}
+.stack-tag{background:#f0f4ff;color:#3b5bdb;font-size:.72rem;font-weight:600;
+  padding:.2rem .6rem;border-radius:6px;border:1px solid #d0dcff}
+.cs-links{margin-top:1rem;display:flex;gap:1rem}
+.cs-link{font-size:.85rem;font-weight:600;color:var(--accent);text-decoration:none}
+.cs-link:hover{text-decoration:underline}
+
+/* === SKILLS === */
+.skills-bg{background:#EEF3FB}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
+.skill-card{background:var(--white);border:1px solid var(--border);
+  border-radius:14px;padding:1.4rem}
+.skill-card h4{font-family:var(--ff-d);font-weight:700;
+  font-size:.92rem;margin-bottom:.8rem}
+.skill-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.skill-tag{background:var(--accent-light);color:var(--accent);
+  font-size:.78rem;font-weight:600;padding:.25rem .65rem;border-radius:100px}
+.skill-tag.gray{background:#f1f5f9;color:var(--muted)}
+
+/* === WHY ME === */
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem}
+.why-card{background:var(--white);border:1px solid var(--border);
+  border-radius:14px;padding:1.4rem;display:flex;gap:1rem;align-items:flex-start}
+.why-icon{font-size:1.6rem;flex-shrink:0;margin-top:.1rem}
+.why-card h4{font-family:var(--ff-d);font-weight:700;font-size:.95rem;margin-bottom:.4rem}
+.why-card p{font-size:.87rem;color:var(--muted);line-height:1.65}
+
+/* === CONTACT === */
+.contact-bg{background:var(--ink);color:var(--white)}
+.contact-bg .s-label{color:#93C5FD}
+.contact-bg .s-title{color:var(--white)}
+.contact-bg .s-sub{color:#94A3B8}
+.contact-links{display:flex;gap:1rem;flex-wrap:wrap}
+.contact-btn{display:inline-flex;align-items:center;gap:.5rem;
+  background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);
+  color:var(--white);padding:.7rem 1.4rem;border-radius:8px;
+  text-decoration:none;font-weight:600;font-size:.9rem;transition:background .2s}
+.contact-btn:hover{background:rgba(255,255,255,.15)}
+
+/* === ANIMATIONS === */
+.fade-in{opacity:0;transform:translateY(22px);
+  transition:opacity .55s ease,transform .55s ease}
+.fade-in.visible{opacity:1;transform:none}
+
+/* === MOBILE === */
+@media(max-width:680px){
+  nav{padding:0 1rem}.nav-links{gap:1rem}
+  .about-grid,.cs-grid,.why-grid{grid-template-columns:1fr}
+  section{padding:3.5rem 1.2rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Soujanya Sakinal</div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO — edit your name, tagline, and description here -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Open to Work · India · 2026</div>
+    <h1>Hi, I'm <span class="accent">Soujanya</span><br/>
+        I think in problems,<br/>deliver in products.</h1>
+    <div class="role-line">
+      I'm looking for roles in&nbsp;<span class="typed" id="typed-text"></span>
+    </div>
+    <p class="hero-desc">
+      MCA final-year student who has shipped two real products end-to-end.
+      Tech-fluent enough to speak developer, people-first enough to speak business.
+    </p>
+    <div class="hero-ctas">
+      <a href="#projects" class="btn-p">See My Work</a>
+      <a href="#contact" class="btn-g">Get in Touch</a>
+    </div>
+  </div>
+</section>
+
+<!-- ROLES STRIP — add/remove chips as needed -->
+<div class="roles-strip">
+  <div class="roles-inner">
+    <div class="role-chip"><span class="icon">🗂️</span>
+      <div><span>Project Coordinator</span>
+      <span class="sub">Delivery & coordination</span></div></div>
+    <div class="role-chip"><span class="icon">📋</span>
+      <div><span>Junior PM</span>
+      <span class="sub">Scope & stakeholders</span></div></div>
+    <div class="role-chip"><span class="icon">🔍</span>
+      <div><span>Business Analyst</span>
+      <span class="sub">Requirements & gaps</span></div></div>
+    <div class="role-chip"><span class="icon">🚀</span>
+      <div><span>Associate PM</span>
+      <span class="sub">Product thinking</span></div></div>
+  </div>
+</div>
+
+<!-- ABOUT — edit your personal details here -->
+<section class="about-bg" id="about">
+  <div class="si fade-in">
+    <div class="s-label">About Me</div>
+    <h2 class="s-title">I've been on both sides of the table.</h2>
+    <p class="s-sub">I built the products. I also defined them.</p>
+    <div class="about-grid">
+      <div class="acard">
+        <h3>🎓 Education</h3>
+        <ul>
+          <li><strong>MCA</strong> — IMCC, Pune · 2024–2026 · 81.71%</li>
+          <li><strong>BCA</strong> — H.N. College, Solapur · 2021–2024 · 8.0 CGPA</li>
+          <li><strong>12th Commerce</strong> — 89.33%</li>
+        </ul>
+      </div>
+      <div class="acard">
+        <h3>💬 Languages</h3>
+        <p>Fluent in English, Hindi, Telugu, and Marathi.</p>
+      </div>
+      <div class="acard">
+        <h3>🧠 How I Think</h3>
+        <ul>
+          <li>Break problems before building solutions</li>
+          <li>Ask "why does the user need this?" first</li>
+          <li>Document decisions, not just outcomes</li>
+        </ul>
+      </div>
+      <div class="acard">
+        <h3>⚡ What Makes Me Different</h3>
+        <p>I've shipped products solo — living every gap: unclear
+        requirements, changing scope, tight deadlines.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS — duplicate .case-study block to add more projects -->
+<section id="projects">
+  <div class="si fade-in">
+    <div class="s-label">Product Case Studies</div>
+    <h2 class="s-title">Products I've shipped — framed as a PM would.</h2>
+    <p class="s-sub">Not just "what I built." What problem existed,
+      what decisions I made, and what the outcome was.</p>
+
+    <div class="case-study">
+      <div class="cs-header">
+        <div class="cs-title-group">
+          <h3>🏠 NestMate — PG & Hostel Finder</h3>
+          <div class="cs-meta">Full-Stack Product · 2024–2025</div>
+        </div>
+        <div>
+          <span class="cs-tag">Project Coordination</span>
+          <span class="cs-tag">Requirements</span>
+          <span class="cs-tag">Delivery</span>
+        </div>
+      </div>
+      <div class="cs-grid">
+        <div class="cs-col">
+          <div class="cs-col-label">🔴 The Problem</div>
+          <p>Students relocating to new cities had no reliable way
+          to discover and verify PG accommodations.</p>
+        </div>
+        <div class="cs-col">
+          <div class="cs-col-label">🟡 What I Did</div>
+          <ul>
+            <li>Mapped 3 user roles — resolved conflicts via RBAC</li>
+            <li>Scoped and prioritised features end-to-end</li>
+            <li>Identified mid-project gap and delivered fix</li>
+            <li>Validated all API flows using Postman</li>
+          </ul>
+        </div>
+        <div class="cs-col">
+          <div class="cs-col-label">🟢 Outcome</div>
+          <p>Fully functional multi-role platform delivered with
+          zero unresolved requirement conflicts.</p>
+        </div>
+      </div>
+      <div class="cs-stack">
+        <span class="stack-tag">React.js</span>
+        <span class="stack-tag">Spring Boot</span>
+        <span class="stack-tag">MySQL</span>
+        <span class="stack-tag">JWT</span>
+        <span class="stack-tag">Groq AI</span>
+      </div>
+      <div class="cs-links">
+        <a class="cs-link"
+          href="https://github.com/SoujanyaSakinal/nestmate-frontend"
+          target="_blank">↗ Frontend</a>
+        <a class="cs-link"
+          href="https://github.com/SoujanyaSakinal/nestmate-backend"
+          target="_blank">↗ Backend</a>
+      </div>
+    </div>
+
+    <div class="case-study">
+      <div class="cs-header">
+        <div class="cs-title-group">
+          <h3>🏥 MediGuide — AI Health Assistant</h3>
+          <div class="cs-meta">GenAI Product · 2025</div>
+        </div>
+        <div>
+          <span class="cs-tag">Product Thinking</span>
+          <span class="cs-tag">Scope Management</span>
+          <span class="cs-tag">BA Analysis</span>
+        </div>
+      </div>
+      <div class="cs-grid">
+        <div class="cs-col">
+          <div class="cs-col-label">🔴 The Problem</div>
+          <p>65% of rural India lacks accessible healthcare guidance
+          — language barriers and no digital tools.</p>
+        </div>
+        <div class="cs-col">
+          <div class="cs-col-label">🟡 What I Did</div>
+          <ul>
+            <li>Defined 4 features from user needs analysis</li>
+            <li>Analysed 3-API integration feasibility</li>
+            <li>Managed scope change (Vision AI) mid-project</li>
+            <li>Validated multilingual output quality</li>
+          </ul>
+        </div>
+        <div class="cs-col">
+          <div class="cs-col-label">🟢 Outcome</div>
+          <p>Working multilingual health assistant with voice input
+          and PDF report analysis across 4 Indian languages.</p>
+        </div>
+      </div>
+      <div class="cs-stack">
+        <span class="stack-tag">React.js</span>
+        <span class="stack-tag">Groq AI</span>
+        <span class="stack-tag">Web Speech API</span>
+        <span class="stack-tag">PDF.js</span>
+      </div>
+      <div class="cs-links">
+        <a class="cs-link"
+          href="https://github.com/SoujanyaSakinal/mediguide-ai"
+          target="_blank">↗ GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS — edit tags to match your actual skills -->
+<section class="skills-bg" id="skills">
+  <div class="si fade-in">
+    <div class="s-label">Skills</div>
+    <h2 class="s-title">What I bring to the table.</h2>
+    <p class="s-sub">A rare mix of analytical thinking and technical depth.</p>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <h4>📋 PM / BA Fundamentals</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Requirements Elicitation</span>
+          <span class="skill-tag">Gap Analysis</span>
+          <span class="skill-tag">User Stories</span>
+          <span class="skill-tag">Acceptance Criteria</span>
+          <span class="skill-tag">Process Mapping</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>⚙️ Methodologies</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Agile</span>
+          <span class="skill-tag">Scrum</span>
+          <span class="skill-tag">SDLC</span>
+          <span class="skill-tag">Sprint Planning</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>🛠️ Tools</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">Jira</span>
+          <span class="skill-tag">GitHub</span>
+          <span class="skill-tag">Postman</span>
+          <span class="skill-tag">Figma (basic)</span>
+          <span class="skill-tag">MySQL Workbench</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>💻 Technical Fluency</h4>
+        <div class="skill-tags">
+          <span class="skill-tag">React.js</span>
+          <span class="skill-tag">Spring Boot</span>
+          <span class="skill-tag">Java</span>
+          <span class="skill-tag">MySQL</span>
+          <span class="skill-tag">REST APIs</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>🤝 Soft Skills</h4>
+        <div class="skill-tags">
+          <span class="skill-tag gray">Team Leadership</span>
+          <span class="skill-tag gray">Communication</span>
+          <span class="skill-tag gray">Critical Thinking</span>
+          <span class="skill-tag gray">Calm Under Pressure</span>
+        </div>
+      </div>
+      <div class="skill-card">
+        <h4>🌐 Languages</h4>
+        <div class="skill-tags">
+          <span class="skill-tag gray">English</span>
+          <span class="skill-tag gray">Hindi</span>
+          <span class="skill-tag gray">Telugu</span>
+          <span class="skill-tag gray">Marathi</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY ME — personalise these four cards -->
+<section id="whyme">
+  <div class="si fade-in">
+    <div class="s-label">Why Hire Me</div>
+    <h2 class="s-title">What most freshers can't say.</h2>
+    <p class="s-sub">Four honest reasons why I'm a strong entry-level candidate.</p>
+    <div class="why-grid">
+      <div class="why-card">
+        <div class="why-icon">🏗️</div>
+        <div>
+          <h4>I've actually shipped products</h4>
+          <p>Two real products end-to-end — with scope changes,
+          integration failures, and deadline pressure.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🔄</div>
+        <div>
+          <h4>I've been both BA and developer</h4>
+          <p>I know how a vague requirement breaks a sprint
+          — and how to write one that doesn't.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">🧩</div>
+        <div>
+          <h4>Technical enough to earn developer trust</h4>
+          <p>I understand API contracts, schemas, and constraints.
+          I won't ask dev teams to do the impossible.</p>
+        </div>
+      </div>
+      <div class="why-card">
+        <div class="why-icon">💪</div>
+        <div>
+          <h4>I stay strong under pressure</h4>
+          <p>I've handled real adversity and come out standing.
+          A critical project issue won't shake me.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT — update your email, phone, and links -->
+<section class="contact-bg" id="contact">
+  <div class="si fade-in">
+    <div class="s-label">Get In Touch</div>
+    <h2 class="s-title">Let's talk.</h2>
+    <p class="s-sub">Looking for Project Coordinator, Junior PM, BA,
+      and APM roles in India. Open to hybrid or remote.</p>
+    <div class="contact-links">
+      <a class="contact-btn"
+        href="mailto:soujanyasakinal03@gmail.com">
+        ✉️ soujanyasakinal03@gmail.com</a>
+      <a class="contact-btn"
+        href="https://www.linkedin.com/in/soujanyasakinal03"
+        target="_blank">💼 LinkedIn</a>
+      <a class="contact-btn"
+        href="https://github.com/SoujanyaSakinal"
+        target="_blank">🐙 GitHub</a>
+      <a class="contact-btn" href="tel:+919834212330">
+        📞 +91 98342 12330</a>
+    </div>
+  </div>
+</section>
+
+<script>
+// TYPEWRITER — edit roles array to change what it cycles through
+const roles = ["Project Coordinator","Junior PM","Business Analyst","Associate PM"];
+let ri=0,ci=0,del=false;
+const el=document.getElementById('typed-text');
+function type(){
+  const w=roles[ri];
+  if(!del){el.textContent=w.slice(0,++ci);
+    if(ci===w.length){del=true;setTimeout(type,1800);return}}
+  else{el.textContent=w.slice(0,--ci);
+    if(ci===0){del=false;ri=(ri+1)%roles.length}}
+  setTimeout(type,del?55:90)
+}
+type();
+
+// SCROLL FADE — no changes needed
+const obs=new IntersectionObserver(
+  e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('visible')}),
+  {threshold:.12});
+document.querySelectorAll('.fade-in').forEach(x=>obs.observe(x));
+</script>
+</body>
+</html>
