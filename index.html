@@ -124,6 +124,25 @@ section{padding:5rem 2rem}
 .cs-link{font-size:.85rem;font-weight:600;color:var(--accent);text-decoration:none}
 .cs-link:hover{text-decoration:underline}
 
+
+/* === JIRA CASE STUDY === */
+.jira-bg{background:#EEF3FB}
+.jira-panel{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:2rem;box-shadow:0 2px 18px rgba(37,99,235,.07)}
+.jira-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:.8rem;margin:1.5rem 0}
+.jira-stat{background:var(--bg);border:1px solid var(--border);border-radius:12px;padding:1rem;text-align:center}
+.jira-stat strong{display:block;font-family:var(--ff-d);font-size:1.65rem;color:var(--accent);line-height:1.3}
+.jira-stat span{display:block;color:var(--muted);font-size:.8rem;margin-top:.25rem}
+.jira-columns{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin-top:1.2rem}
+.jira-info{background:var(--bg);border-radius:10px;padding:1.2rem}
+.jira-info h3{font-family:var(--ff-d);font-size:1rem;margin-bottom:.6rem}
+.jira-info ul{padding-left:1.2rem}
+.jira-info li,.jira-info p{font-size:.9rem;color:var(--muted);line-height:1.7;margin-bottom:.3rem}
+.jira-note{margin-top:1rem;padding:1rem 1.1rem;border-left:4px solid var(--accent);background:var(--accent-light);border-radius:0 8px 8px 0;color:var(--ink);font-size:.86rem;line-height:1.65}
+.jira-links{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.3rem}
+.jira-btn{display:inline-flex;align-items:center;gap:.45rem;background:var(--accent);color:white;text-decoration:none;padding:.7rem 1rem;border-radius:8px;font-weight:600;font-size:.88rem}
+.jira-btn.secondary{background:white;color:var(--accent);border:1px solid var(--border)}
+@media(max-width:680px){.jira-stats{grid-template-columns:repeat(2,minmax(0,1fr))}.jira-columns{grid-template-columns:1fr}.nav-links{gap:.65rem}.nav-links a{font-size:.75rem}}
+
 /* === SKILLS === */
 .skills-bg{background:#EEF3FB}
 .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.2rem}
@@ -176,12 +195,13 @@ section{padding:5rem 2rem}
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
+    <li><a href="#jira">Jira Case Study</a></li>
     <li><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
 </nav>
 
-<!-- HERO — edit your name, tagline, and description here -->
+<!-- HERO-->
 <section class="hero">
   <div class="hero-inner">
     <div class="eyebrow">Open to Work · India · 2026</div>
@@ -201,7 +221,7 @@ section{padding:5rem 2rem}
   </div>
 </section>
 
-<!-- ROLES STRIP — add/remove chips as needed -->
+<!-- ROLES STRIP -->
 <div class="roles-strip">
   <div class="roles-inner">
     <div class="role-chip"><span class="icon">🗂️</span>
@@ -219,7 +239,7 @@ section{padding:5rem 2rem}
   </div>
 </div>
 
-<!-- ABOUT — edit your personal details here -->
+<!-- ABOUT -->
 <section class="about-bg" id="about">
   <div class="si fade-in">
     <div class="s-label">About Me</div>
@@ -229,7 +249,7 @@ section{padding:5rem 2rem}
       <div class="acard">
         <h3>🎓 Education</h3>
         <ul>
-          <li><strong>MCA</strong> — IMCC, Pune · 2024–2026 · 81.71%</li>
+          <li><strong>MCA</strong> — IMCC, Pune · 2024–2026 · 8.87 CGPA</li>
           <li><strong>BCA</strong> — H.N. College, Solapur · 2021–2024 · 8.0 CGPA</li>
           <li><strong>12th Commerce</strong> — 89.33%</li>
         </ul>
@@ -255,7 +275,7 @@ section{padding:5rem 2rem}
   </div>
 </section>
 
-<!-- PROJECTS — duplicate .case-study block to add more projects -->
+<!-- PROJECTS -->
 <section id="projects">
   <div class="si fade-in">
     <div class="s-label">Product Case Studies</div>
@@ -306,10 +326,10 @@ section{padding:5rem 2rem}
       <div class="cs-links">
         <a class="cs-link"
           href="https://github.com/SoujanyaSakinal/nestmate-frontend"
-          target="_blank">↗ Frontend</a>
+          target="_blank" rel="noopener noreferrer">↗ Frontend</a>
         <a class="cs-link"
           href="https://github.com/SoujanyaSakinal/nestmate-backend"
-          target="_blank">↗ Backend</a>
+          target="_blank" rel="noopener noreferrer">↗ Backend</a>
       </div>
     </div>
 
@@ -355,7 +375,70 @@ section{padding:5rem 2rem}
       <div class="cs-links">
         <a class="cs-link"
           href="https://github.com/SoujanyaSakinal/mediguide-ai"
-          target="_blank">↗ GitHub</a>
+          target="_blank" rel="noopener noreferrer">↗ GitHub</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- JIRA CASE STUDY -->
+<section class="jira-bg" id="jira">
+  <div class="si fade-in">
+    <div class="s-label">Practical Tool Exploration</div>
+    <h2 class="s-title">Jira Project Planning Case Study</h2>
+    <p class="s-sub">Using Jira to organize NestMate's completed scope into a clear Agile/Scrum planning structure and explore work tracking and reporting.</p>
+
+    <div class="jira-panel">
+      <div class="cs-header">
+        <div class="cs-title-group">
+          <h3>🗂️ NestMate — Agile Planning in Jira</h3>
+          <div class="cs-meta">Team-managed Jira software space · Agile/Scrum concepts</div>
+        </div>
+        <div><span class="cs-tag">Jira</span><span class="cs-tag">Scrum</span><span class="cs-tag">Sprint Planning</span></div>
+      </div>
+
+      <p style="color:var(--muted);line-height:1.75">NestMate is a PG and Hostel Finder web application. After completing the application, I used Jira to retrospectively structure its features, user stories, and sprint plan. This exercise helped me practise how a project backlog can be organized and tracked in Jira.</p>
+
+      <div class="jira-stats">
+        <div class="jira-stat"><strong>7</strong><span>Epics</span></div>
+        <div class="jira-stat"><strong>28</strong><span>User Stories</span></div>
+        <div class="jira-stat"><strong>3</strong><span>Sprints planned</span></div>
+        <div class="jira-stat"><strong>2</strong><span>Report types explored</span></div>
+      </div>
+
+      <div class="jira-columns">
+        <div class="jira-info">
+          <h3>What I practised</h3>
+          <ul>
+            <li>Grouped product features into Epics.</li>
+            <li>Created and linked User Stories to relevant Epics.</li>
+            <li>Organized Stories across three Sprints.</li>
+            <li>Added Story Point estimates to represent relative effort.</li>
+            <li>Updated work-item statuses and reviewed completed items.</li>
+            <li>Opened and explored Sprint Burndown and Burnup Reports.</li>
+          </ul>
+        </div>
+        <div class="jira-info">
+          <h3>Skills demonstrated</h3>
+          <ul>
+            <li>Backlog organization and work breakdown</li>
+            <li>User Story and Epic relationships</li>
+            <li>Sprint planning and estimation concepts</li>
+            <li>Work-item status tracking</li>
+            <li>Basic Agile reporting awareness</li>
+          </ul>
+          <h3 style="margin-top:1rem">Tools & methods</h3>
+          <p>Jira · Agile · Scrum · User Stories · Story Points · Sprint Planning · Burndown/Burnup Reports</p>
+        </div>
+      </div>
+
+      <div class="jira-note"><strong>Project context:</strong> Jira was set up after the application had been completed, so this is a retrospective planning and documentation exercise—not a claim that Jira was used to manage the original development in real time.</div>
+
+      <div class="jira-links">
+        <!-- Replace the placeholder below with your public GitHub case-study repository once you create it. -->
+        <a class="jira-btn" href="https://github.com/SoujanyaSakinal" target="_blank" rel="noopener noreferrer">↗ View my GitHub</a>
+        <a class="jira-btn secondary" href="#contact">Contact me about this case study</a>
       </div>
     </div>
   </div>
@@ -485,10 +568,10 @@ section{padding:5rem 2rem}
         ✉️ soujanyasakinal03@gmail.com</a>
       <a class="contact-btn"
         href="https://www.linkedin.com/in/soujanyasakinal03"
-        target="_blank">💼 LinkedIn</a>
+        target="_blank" rel="noopener noreferrer">💼 LinkedIn</a>
       <a class="contact-btn"
         href="https://github.com/SoujanyaSakinal"
-        target="_blank">🐙 GitHub</a>
+        target="_blank" rel="noopener noreferrer">🐙 GitHub</a>
       <a class="contact-btn" href="tel:+919834212330">
         📞 +91 98342 12330</a>
     </div>
